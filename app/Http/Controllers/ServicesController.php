@@ -21,7 +21,7 @@ class ServicesController extends Controller
 
     }
 
-    public function edit($services)
+    public function edit($lang,$services)
     {
         
         $services=Services::find($services);

@@ -72,10 +72,6 @@
     @stack('js')
     
     @livewireScripts
-
-    <script>
-        window.livewire_app_url = '{{ route('services.create') }}';
- </script>
 </body>
 
 </html>

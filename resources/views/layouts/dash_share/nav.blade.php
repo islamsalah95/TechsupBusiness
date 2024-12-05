@@ -187,7 +187,7 @@ id="layout-navbar">
               <div class="d-flex">
                 <div class="flex-shrink-0 me-3">
                   <div class="avatar">
-                    <img src={{asset_url('dash/assets/img/avatars/1.png')}}" alt class="h-auto rounded-circle" />
+                    <img src={{asset_url('img/avatars/1.png')}}" alt class="h-auto rounded-circle" />
                   </div>
                 </div>
                 <div class="flex-grow-1">
@@ -231,7 +231,7 @@ id="layout-navbar">
               <div class="d-flex">
                 <div class="flex-shrink-0 me-3">
                   <div class="avatar">
-                    <img src={{asset_url('dash/assets/img/avatars/2.png')}}" alt class="h-auto rounded-circle" />
+                    <img src={{asset_url('img/avatars/2.png')}}" alt class="h-auto rounded-circle" />
                   </div>
                 </div>
                 <div class="flex-grow-1">
@@ -277,7 +277,7 @@ id="layout-navbar">
               <div class="d-flex">
                 <div class="flex-shrink-0 me-3">
                   <div class="avatar">
-                    <img src={{asset_url('dash/assets/img/avatars/9.png')}}" alt class="h-auto rounded-circle" />
+                    <img src={{asset_url('img/avatars/9.png')}}" alt class="h-auto rounded-circle" />
                   </div>
                 </div>
                 <div class="flex-grow-1">
@@ -323,7 +323,7 @@ id="layout-navbar">
               <div class="d-flex">
                 <div class="flex-shrink-0 me-3">
                   <div class="avatar">
-                    <img src={{asset_url('dash/assets/img/avatars/5.png')}}" alt class="h-auto rounded-circle" />
+                    <img src={{asset_url('img/avatars/5.png')}}" alt class="h-auto rounded-circle" />
                   </div>
                 </div>
                 <div class="flex-grow-1">
@@ -345,7 +345,7 @@ id="layout-navbar">
               <div class="d-flex">
                 <div class="flex-shrink-0 me-3">
                   <div class="avatar">
-                    <img src={{asset_url('dash/assets/img/avatars/6.png')}}" alt class="h-auto rounded-circle" />
+                    <img src={{asset_url('img/avatars/6.png')}}" alt class="h-auto rounded-circle" />
                   </div>
                 </div>
                 <div class="flex-grow-1">
@@ -404,7 +404,7 @@ id="layout-navbar">
     <li class="nav-item navbar-dropdown dropdown-user dropdown">
       <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
         <div class="avatar avatar-online">
-          <img src={{asset_url('dash/assets/img/avatars/1.png')}}" alt class="h-auto rounded-circle" />
+          <img src={{asset_url('img/avatars/1.png')}}" alt class="h-auto rounded-circle" />
         </div>
       </a>
       <ul class="dropdown-menu dropdown-menu-end">
@@ -413,7 +413,7 @@ id="layout-navbar">
             <div class="d-flex">
               <div class="flex-shrink-0 me-3">
                 <div class="avatar avatar-online">
-                  <img src={{asset_url('dash/assets/img/avatars/1.png')}}" alt class="h-auto rounded-circle" />
+                  <img src={{asset_url('img/avatars/1.png')}}" alt class="h-auto rounded-circle" />
                 </div>
               </div>
               <div class="flex-grow-1">

@@ -32,9 +32,9 @@
                                     class="dt-down-arrow"></span>
                             </button>
                         </div>
-
+                        
                         <div class="btn-group">
-                            <a href="{{ route('services.create') }}" class="btn btn-secondary create-new btn-primary"
+                            <a href="{{ route('services.create', ['locale' => app()->getLocale()]) }}" class="btn btn-secondary create-new btn-primary"
                                 tabindex="0" aria-controls="DataTables_Table_0" type="button">
                                 <span><i class="ti ti-plus me-sm-1"></i> <span
                                         class="d-none d-sm-inline-block">{{ __('services/index.add_record') }}</span></span>
@@ -128,7 +128,7 @@
                                         <i class="ti ti-dots-vertical"></i>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="{{ route('services.edit', $service['id']) }}">
+                                        <a class="dropdown-item" href="{{ route('services.edit', ['locale' => app()->getLocale(), 'service' => $service['id']]) }}">
                                             <i class="ti ti-pencil"></i> Edit
                                         </a>
                                         <button class="dropdown-item text-danger" type="button"

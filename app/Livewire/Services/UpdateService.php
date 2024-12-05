@@ -37,7 +37,7 @@ class UpdateService extends Component
         session()->flash('message', 'Service successfully updated.');
 
         // Redirect to services list
-        return redirect()->to('dash/services');
+        return redirect()->to('/' . app()->getLocale() . '/dash/services');
     }
 
     public function mount($services = null)

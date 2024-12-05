@@ -33,7 +33,7 @@ class CreateService extends Component
         session()->flash('message', 'service successfully created.');
 
         // Redirect to services list
-        return redirect()->to('dash/services');
+        return redirect()->to('/' . app()->getLocale() . '/dash/services');
     }
 
     public function render()

@@ -38,7 +38,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             // \Livewire\Livewire::class,
-            // LivewireConvert::class,
+            LivewireConvert::class,
 
         ],
 
