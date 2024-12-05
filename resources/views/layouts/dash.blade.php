@@ -1,21 +1,28 @@
 <!DOCTYPE html>
-
-<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed" dir="ltr" data-theme="theme-default"
-    data-assets-path="dash/assets/" data-template="vertical-menu-template">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="light-style layout-navbar-fixed layout-menu-fixed"
+    dir="{{ LaravelLocalization::getCurrentLocaleDirection() }}" data-theme="theme-default" data-assets-path="dash/assets/"
+    data-template="vertical-menu-template">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-    <title>Dashboard</title>
+    <title>Techsup Business</title>
     <meta name="description" content="" />
+    <!--  stylesheets headers -->
     @include('layouts.dash_share.stylesheets')
+    <!--  stylesheets headers css push -->
     @stack('css')
+    @livewireStyles
+
+    {{-- scripts headers --}}
     @include('layouts.dash_share.scripts_header')
+    <!--  scripts headers push -->
     @stack('js_header')
 </head>
 
 <body>
+
 
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
@@ -33,12 +40,16 @@
                 <div class="content-wrapper">
 
 
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <h4 class="py-3 mb-4">
+                            @yield('titel')
+                        </h4>
 
-                    <!-- Content -->
-                    @yield('content')
-                    <!-- / Content -->
+                        <!-- Content -->
+                        @yield('content')
+                        <!-- / Content -->
 
-
+                    </div>
 
                     <div class="content-backdrop fade"></div>
                 </div>
@@ -55,8 +66,16 @@
     </div>
     <!-- / Layout wrapper -->
 
+    <!--  scripts footer -->
     @include('layouts.dash_share.scripts_footer')
+    <!--   scripts footer push -->
     @stack('js')
+    
+    @livewireScripts
+
+    <script>
+        window.livewire_app_url = '{{ route('services.create') }}';
+ </script>
 </body>
 
 </html>

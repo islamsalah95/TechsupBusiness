@@ -26,26 +26,13 @@ id="layout-navbar">
         <i class="ti ti-language rounded-circle ti-md"></i>
       </a>
       <ul class="dropdown-menu dropdown-menu-end">
+        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
         <li>
-          <a class="dropdown-item" href="javascript:void(0);" data-language="en">
-            <span class="align-middle">English</span>
+          <a class="dropdown-item" rel="alternate" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+            <span class="align-middle">{{ $properties['native'] }}</span>
           </a>
         </li>
-        <li>
-          <a class="dropdown-item" href="javascript:void(0);" data-language="fr">
-            <span class="align-middle">French</span>
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item" href="javascript:void(0);" data-language="de">
-            <span class="align-middle">German</span>
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item" href="javascript:void(0);" data-language="pt">
-            <span class="align-middle">Portuguese</span>
-          </a>
-        </li>
+        @endforeach
       </ul>
     </li>
     <!--/ Language -->
@@ -200,7 +187,7 @@ id="layout-navbar">
               <div class="d-flex">
                 <div class="flex-shrink-0 me-3">
                   <div class="avatar">
-                    <img src="../../assets/img/avatars/1.png" alt class="h-auto rounded-circle" />
+                    <img src={{asset_url('dash/assets/img/avatars/1.png')}}" alt class="h-auto rounded-circle" />
                   </div>
                 </div>
                 <div class="flex-grow-1">
@@ -244,7 +231,7 @@ id="layout-navbar">
               <div class="d-flex">
                 <div class="flex-shrink-0 me-3">
                   <div class="avatar">
-                    <img src="../../assets/img/avatars/2.png" alt class="h-auto rounded-circle" />
+                    <img src={{asset_url('dash/assets/img/avatars/2.png')}}" alt class="h-auto rounded-circle" />
                   </div>
                 </div>
                 <div class="flex-grow-1">
@@ -290,7 +277,7 @@ id="layout-navbar">
               <div class="d-flex">
                 <div class="flex-shrink-0 me-3">
                   <div class="avatar">
-                    <img src="../../assets/img/avatars/9.png" alt class="h-auto rounded-circle" />
+                    <img src={{asset_url('dash/assets/img/avatars/9.png')}}" alt class="h-auto rounded-circle" />
                   </div>
                 </div>
                 <div class="flex-grow-1">
@@ -336,7 +323,7 @@ id="layout-navbar">
               <div class="d-flex">
                 <div class="flex-shrink-0 me-3">
                   <div class="avatar">
-                    <img src="../../assets/img/avatars/5.png" alt class="h-auto rounded-circle" />
+                    <img src={{asset_url('dash/assets/img/avatars/5.png')}}" alt class="h-auto rounded-circle" />
                   </div>
                 </div>
                 <div class="flex-grow-1">
@@ -358,7 +345,7 @@ id="layout-navbar">
               <div class="d-flex">
                 <div class="flex-shrink-0 me-3">
                   <div class="avatar">
-                    <img src="../../assets/img/avatars/6.png" alt class="h-auto rounded-circle" />
+                    <img src={{asset_url('dash/assets/img/avatars/6.png')}}" alt class="h-auto rounded-circle" />
                   </div>
                 </div>
                 <div class="flex-grow-1">
@@ -417,7 +404,7 @@ id="layout-navbar">
     <li class="nav-item navbar-dropdown dropdown-user dropdown">
       <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
         <div class="avatar avatar-online">
-          <img src="../../assets/img/avatars/1.png" alt class="h-auto rounded-circle" />
+          <img src={{asset_url('dash/assets/img/avatars/1.png')}}" alt class="h-auto rounded-circle" />
         </div>
       </a>
       <ul class="dropdown-menu dropdown-menu-end">
@@ -426,7 +413,7 @@ id="layout-navbar">
             <div class="d-flex">
               <div class="flex-shrink-0 me-3">
                 <div class="avatar avatar-online">
-                  <img src="../../assets/img/avatars/1.png" alt class="h-auto rounded-circle" />
+                  <img src={{asset_url('dash/assets/img/avatars/1.png')}}" alt class="h-auto rounded-circle" />
                 </div>
               </div>
               <div class="flex-grow-1">
