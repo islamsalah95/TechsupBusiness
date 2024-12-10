@@ -21,7 +21,9 @@ new #[Layout('layouts.guest')] class extends Component
 
         Session::regenerate();
 
-        $this->redirectIntended(default: RouteServiceProvider::HOME, navigate: true);
+        $this->redirectRoute('services.index', ['locale' => app()->getLocale()]);
+
+        // $this->redirectIntended(default: RouteServiceProvider::HOME, navigate: true);
     }
 }; ?>
 
@@ -46,7 +48,7 @@ new #[Layout('layouts.guest')] class extends Component
                             name="password"
                             required autocomplete="current-password" />
 
-            <x-input-error :messages="$errors->get('form.password')" class="mt-2" />
+            <x-input-error :messages="$errors->get('form.password',['locale' => app()->getLocale()])" class="mt-2" />
         </div>
 
         <!-- Remember Me -->
@@ -59,7 +61,7 @@ new #[Layout('layouts.guest')] class extends Component
 
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}" wire:navigate>
+                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request',['locale' => app()->getLocale()]) }}" wire:navigate>
                     {{ __('Forgot your password?') }}
                 </a>
             @endif

@@ -27,3 +27,75 @@
 <!-- Page JS -->
 <script src="{{ asset_url('js/dashboards-analytics.js') }}"></script>
 {{-- <script src="{{ asset_url('js/tables-datatables-basic.js') }}"></script> --}}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+
+<script type="text/javascript">
+    function printDiv(fileName) {
+        var elementToPrint = document.getElementById('myTabel');
+        if (elementToPrint) {
+            // Save the original content of the body
+            var originalContent = document.body.innerHTML;
+            
+            // Replace the body content with the content to print
+            document.body.innerHTML = elementToPrint.innerHTML;
+
+            // Print the content
+            window.print();
+
+            // Create a temporary link to trigger download with the custom name
+            var blob = new Blob([elementToPrint.innerHTML], { type: 'application/msword' });
+            var link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = fileName + '.html'; // Set the downloaded file name
+
+            // Append the link to the document and trigger the click event to download
+            document.body.appendChild(link);
+            link.click();
+
+            // Remove the link after the download
+            document.body.removeChild(link);
+
+            // Restore the original content of the body
+            document.body.innerHTML = originalContent;
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    function exportToExcel(fileName) {
+        // Get the table element
+        var table = document.getElementById('myTabel');
+
+        // Convert table to Excel workbook
+        var wb = XLSX.utils.table_to_book(table);
+
+        // Save the workbook as an Excel file
+        XLSX.writeFile(wb, fileName + '.xlsx');
+    }
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Select all parent menu items with submenus
+        const parentMenuItems = document.querySelectorAll('li.menu-item');
+
+        parentMenuItems.forEach((parentMenuItem) => {
+            // Find the child <ul> inside the parent
+            const submenu = parentMenuItem.querySelector('ul.menu-sub');
+
+            if (submenu) {
+                // Count the number of <li> items in the <ul>
+                const childItemsCount = submenu.querySelectorAll('li.menu-item').length;
+
+                // Find the badge element and update its content
+                const badge = parentMenuItem.querySelector('.badge');
+                if (badge) {
+                    badge.textContent = childItemsCount;
+                }
+            }
+        });
+    });
+</script>

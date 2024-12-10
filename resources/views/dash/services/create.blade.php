@@ -1,17 +1,16 @@
 @extends('layouts.dash')
 
+@section('titel')
+    <span class="text-muted fw-light">{{ __('services/create.main_titel') }}/</span>{{ __('services/create.sub_titel') }}
+@endsection
+
 @section('content')
     <!-- Content -->
 
-    <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="py-3 mb-4"><span class="text-muted fw-light">services /</span> create</h4>
-        <div class="card">
-
-        @livewire('services.create-service')
 
 
-        </div>
+    @livewire('services.create-service')
 
-    </div>
+
     <!-- / Content -->
 @endsection

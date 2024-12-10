@@ -20,7 +20,7 @@ class RoleController extends Controller
         // $this->middleware(['permission:role-delete'], ['only' => ['destroy']]);
     }
 
-    public function index(Request $request)
+    public function index()
     {
         return view('dash.roles.index');
     }
@@ -45,20 +45,22 @@ class RoleController extends Controller
     $role = Role::create(['name' => $request->input('name')]);
     $role->syncPermissions($permissionIds);
 
-    return redirect()->route('roles.index')->with('success', 'Role created successfully');
+    return redirect()->route('roles.index', ['locale' => app()->getLocale()])->with('success', 'Role created successfully');
     }
 
-    public function show($id)
+    public function show($lang,$id)
     {
+
         $role = Role::find($id);
         $rolePermissions = Permission::join("role_has_permissions", "role_has_permissions.permission_id", "=", "permissions.id")
             ->where("role_has_permissions.role_id", $id)
             ->get();
 
+
         return view('dash.roles.show', compact('role', 'rolePermissions'));
     }
 
-    public function edit($id)
+    public function edit($lang,$id)
     {
         // Find the role by ID
         $role = Role::findOrFail($id);
@@ -73,7 +75,7 @@ class RoleController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request,$lang, $id)
     {
         // Validate the request
         $this->validate($request, [
@@ -100,15 +102,15 @@ class RoleController extends Controller
         $role->syncPermissions($permissionIds);
 
         // Redirect with success message
-        return redirect()->route('roles.index')
+        return redirect()->route('roles.index', ['locale' => app()->getLocale()])
             ->with('success', 'Role updated successfully');
     }
 
 
-    public function destroy($id)
+    public function destroy($lang,$id)
     {
         DB::table("roles")->where('id', $id)->delete();
-        return redirect()->route('dash.roles.index')
+        return redirect()->route('roles.index', ['locale' => app()->getLocale()])
             ->with('success', 'Role deleted successfully');
     }
 }

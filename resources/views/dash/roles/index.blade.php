@@ -1,21 +1,19 @@
 @extends('layouts.dash')
 
 @section('titel')
-    <span class="text-muted fw-light">{{ __('services/index.main_titel') }}/</span>{{ __('services/index.sub_titel') }}
+    <span class="text-muted fw-light">{{ __('roles/index.main_titel') }}/</span>{{ __('roles/index.sub_titel') }}
 @endsection
 
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Roles</h1>
-            <a href="{{ route('roles.create') }}" class="btn btn-primary mb-3">Add New Role</a>
+            <a href="{{ route('roles.create', ['locale' => app()->getLocale()]) }}" class="btn btn-primary mb-3">{{ __('roles/index.add') }}</a>
             @if(session('success'))
                 <div class="alert alert-success">{{ session('success') }}</div>
             @endif
             <div class="card">
                 <div class="card-header">
-                    <h5 class="mb-0">Roles List</h5>
                 </div>
 
 

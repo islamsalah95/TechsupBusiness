@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="light-style layout-navbar-fixed layout-menu-fixed"
-    dir="{{ LaravelLocalization::getCurrentLocaleDirection() }}" data-theme="theme-default" data-assets-path="dash/assets/"
+    dir="{{ getDirection() }}" data-theme="theme-default" data-assets-path="/dash/assets/"
     data-template="vertical-menu-template">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport"
@@ -13,6 +12,13 @@
     @include('layouts.dash_share.stylesheets')
     <!--  stylesheets headers css push -->
     @stack('css')
+
+    <style>
+    .setDir {
+        direction: {{getDirection()}};
+        dir:{{getDirection()}};
+    }
+    </style>
     @livewireStyles
 
     {{-- scripts headers --}}
@@ -41,10 +47,14 @@
 
 
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="py-3 mb-4">
+                        <h4 class="py-3 mb-4 setDir" >
                             @yield('titel')
                         </h4>
 
+                        <!-- messages -->
+                        @livewire('share.success-message')
+                        <!-- / messages -->
+                        
                         <!-- Content -->
                         @yield('content')
                         <!-- / Content -->

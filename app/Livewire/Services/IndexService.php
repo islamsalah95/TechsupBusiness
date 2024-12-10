@@ -17,19 +17,21 @@ class IndexService extends Component
     public function delete($id)
     {
         Services::where('id', $id)->delete();
-
+    
         session()->flash('message', 'Service successfully deleted.');
-        
+        $this->dispatch('del',   message: 'Service successfully deleted.');
+
+
     }
 
 
     public function render()
     {
-        $query = Services::where('status', '1')->orWhere('status', '0');
+        $query = Services::whereIn('status', [1,0]);
     
         if ($this->search) {
             $query->where(function ($q) {
-                $q->whereRaw("JSON_UNQUOTE(JSON_EXTRACT(name, '$.ar'))   LIKE ?",   ['%' . $this->search . '%'])
+                $q->whereRaw("JSON_UNQUOTE(JSON_EXTRACT(name,   '$.ar')) LIKE ?", ['%' . $this->search . '%'])
                   ->orWhereRaw("JSON_UNQUOTE(JSON_EXTRACT(name, '$.en')) LIKE ?", ['%' . $this->search . '%'])
                   ->orWhereRaw("JSON_UNQUOTE(JSON_EXTRACT(slug, '$.ar')) LIKE ?", ['%' . $this->search . '%'])
                   ->orWhereRaw("JSON_UNQUOTE(JSON_EXTRACT(slug, '$.en')) LIKE ?", ['%' . $this->search . '%']);

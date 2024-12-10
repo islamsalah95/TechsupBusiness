@@ -1,8 +1,9 @@
 @extends('layouts.dash')
 
 @section('titel')
-    <span class="text-muted fw-light">{{ __('services/index.main_titel') }}/</span>{{ __('services/index.sub_titel') }}
+    <span class="text-muted fw-light">{{ __('roles/show.title.main') }}/</span>{{ __('roles/show.title.sub') }}
 @endsection
+
 @section('content')
 
 <!-- Content -->
@@ -10,9 +11,9 @@
     <div class="row">
         <div class="col-lg-12 margin-tb mb-4">
             <div class="pull-left">
-                <h2> Show Role
+                <h2>{{ __('roles/show.header') }}
                     <div class="float-end">
-                        <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
+                        <a class="btn btn-primary" href="{{ route('roles.index', ['locale' => app()->getLocale()]) }}">{{ __('roles/show.buttons.back') }}</a>
                     </div>
                 </h2>
             </div>
@@ -20,25 +21,24 @@
     </div>
 
     <div class="card shadow-sm">
-
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <div class="form-group">
-                        <strong>Name:</strong>
+                        <strong>{{ __('roles/show.labels.name') }}</strong>
                         <p class="text-muted">{{ $role->name }}</p>
                     </div>
                 </div>
                 <div class="col-md-12 mb-3">
                     <div class="form-group">
-                        <strong>Permissions:</strong>
+                        <strong>{{ __('roles/show.labels.permissions') }}</strong>
                         <p class="text-muted">
                             @if (!empty($rolePermissions))
                                 @foreach ($rolePermissions as $v)
                                     <span class="badge bg-primary">{{ $v->name }}</span>
                                 @endforeach
                             @else
-                                <span class="text-muted">No permissions assigned</span>
+                                <span class="text-muted">{{ __('roles/show.messages.no_permissions') }}</span>
                             @endif
                         </p>
                     </div>
