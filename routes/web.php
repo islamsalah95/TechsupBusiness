@@ -12,10 +12,18 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// Define localized routes
+Route::middleware(['web', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])
+    ->prefix('{locale}')
+    ->where(['locale' => implode('|', config('app.locales'))]) 
+    ->group(function () {
+        Route::get('/', function () {
+            return view('welcome');
+        });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+        
+    });
+
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
