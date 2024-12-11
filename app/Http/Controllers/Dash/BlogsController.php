@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dash;
+use App\Models\Blogs;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreBlogsRequest;
+use App\Http\Requests\UpdateBlogsRequest;
 
-use App\Models\Contacts;
-use App\Http\Requests\StoreContactsRequest;
-use App\Http\Requests\UpdateContactsRequest;
-
-class ContactsController extends Controller
+class BlogsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class ContactsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreContactsRequest $request)
+    public function store(StoreBlogsRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class ContactsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Contacts $contacts)
+    public function show(Blogs $blogs)
     {
         //
     }
@@ -43,7 +43,7 @@ class ContactsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Contacts $contacts)
+    public function edit(Blogs $blogs)
     {
         //
     }
@@ -51,7 +51,7 @@ class ContactsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateContactsRequest $request, Contacts $contacts)
+    public function update(UpdateBlogsRequest $request, Blogs $blogs)
     {
         //
     }
@@ -59,7 +59,7 @@ class ContactsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Contacts $contacts)
+    public function destroy(Blogs $blogs)
     {
         //
     }

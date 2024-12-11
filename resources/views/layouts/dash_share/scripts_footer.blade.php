@@ -99,3 +99,38 @@
         });
     });
 </script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const imageInput = document.getElementById('imageUpload');
+        const imagePreview = document.getElementById('imagePreview');
+
+        imageInput.addEventListener('change', function (event) {
+            // Clear existing preview
+            imagePreview.innerHTML = '';
+
+            const file = event.target.files[0];
+
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    // Create and style the preview image
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.style.maxWidth = '200px';
+                    img.style.maxHeight = '200px';
+                    img.style.border = '1px solid #ddd';
+                    img.style.padding = '5px';
+                    img.style.borderRadius = '5px';
+                    img.style.boxShadow = '0px 4px 6px rgba(0, 0, 0, 0.1)';
+                    imagePreview.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            } else {
+                // Handle non-image files
+                imagePreview.textContent = 'Selected file is not an image.';
+            }
+        });
+    });
+</script>

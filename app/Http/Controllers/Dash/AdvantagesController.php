@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Dash;
 use App\Models\Advantages;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAdvantagesRequest;
 use App\Http\Requests\UpdateAdvantagesRequest;
 

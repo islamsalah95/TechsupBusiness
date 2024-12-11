@@ -18,8 +18,7 @@ class IndexService extends Component
     {
         Services::where('id', $id)->delete();
     
-        session()->flash('message', 'Service successfully deleted.');
-        $this->dispatch('del',   message: 'Service successfully deleted.');
+        $this->dispatch('del',message: __('share.message.delete') );
 
 
     }

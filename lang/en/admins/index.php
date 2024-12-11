@@ -1,9 +1,8 @@
 <?php
 
 return [
-    'main_titel' => 'services',
-    'sub_titel' => 'show',
-
+    'main_titel' => 'Admins',
+    'sub_titel' => 'Show',
     'print' => 'Print',
     'export' => 'Export',
     'add_record' => 'Add Record',
@@ -12,11 +11,12 @@ return [
     'search' => 'Search',
     'name' => 'Name',
     'status' => 'Status',
-    'slug' => 'Slug',
+    'last_seen' => 'last Seen',
+    'role' => 'role',
     'actions' => 'Actions',
     'status_active' => 'Active',
     'status_inactive' => 'Inactive',
-    'delete_confirm' => 'Are you sure you want to delete this service?',
+    'delete_confirm' => 'Are you sure you want to delete ?',
     'delete_message' => 'success deleted',
     'edit' => 'Edit',
     'delete' => 'Delete',

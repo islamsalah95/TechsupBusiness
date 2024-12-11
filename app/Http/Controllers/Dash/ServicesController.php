@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Dash;
 use App\Models\Services;
+use App\Http\Controllers\Controller;
 
 
 class ServicesController extends Controller

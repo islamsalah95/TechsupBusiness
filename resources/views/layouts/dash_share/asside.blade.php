@@ -37,6 +37,7 @@
                     </a>
                 </li>
                 <!-- Dashboards -->
+                
                 <!-- Components -->
                 <li class="menu-header small text-uppercase">
                     <span class="menu-header-text">pages</span>
@@ -46,8 +47,7 @@
 
                 <!-- services -->
                 <li class="menu-item {{ route_is('services.*', 'open') }}" id="services">
-                    <a href="{{ route('services.index', ['locale' => app()->getLocale()]) }}"
-                        class="menu-link menu-toggle">
+                    <a href="{{ router('services.index') }}" class="menu-link menu-toggle">
                         <i class="menu-icon tf-icons ti ti-id"></i>
                         <div data-i18n="{{ __('services/index.main_titel') }}">{{ __('services/index.main_titel') }}
                         </div>
@@ -55,14 +55,13 @@
                     </a>
                     <ul class="menu-sub">
                         <li class="menu-item {{ route_is('services.index', 'active') }}">
-                            <a href="{{ route('services.index', ['locale' => app()->getLocale()]) }}" class="menu-link">
+                            <a href="{{ router('services.index') }}" class="menu-link">
                                 <div data-i18n="{{ __('services/index.main_titel') }}">
                                     {{ __('services/index.main_titel') }}</div>
                             </a>
                         </li>
                         <li class="menu-item {{ route_is('services.create', 'active') }}">
-                            <a href="{{ route('services.create', ['locale' => app()->getLocale()]) }}"
-                                class="menu-link">
+                            <a href="{{ router('services.create') }}" class="menu-link">
                                 <div data-i18n="{{ __('services/create.sub_titel') }}">
                                     {{ __('services/create.sub_titel') }}</div>
                             </a>
@@ -74,21 +73,20 @@
 
                 <!-- roles -->
                 <li class="menu-item {{ route_is('roles.*', 'open') }}" id="roles">
-                    <a href="{{ route('roles.index', ['locale' => app()->getLocale()]) }}"
-                        class="menu-link menu-toggle">
+                    <a href="{{ router('roles.index') }}" class="menu-link menu-toggle">
                         <i class="menu-icon tf-icons ti ti-id"></i>
                         <div data-i18n="{{ __('roles/index.main_titel') }}">{{ __('roles/index.main_titel') }}</div>
                         <div class="badge bg-primary rounded-pill ms-auto">0</div> <!-- Default to 0 -->
                     </a>
                     <ul class="menu-sub">
                         <li class="menu-item {{ route_is('roles.index', 'active') }}">
-                            <a href="{{ route('roles.index', ['locale' => app()->getLocale()]) }}" class="menu-link">
+                            <a href="{{ router('roles.index') }}" class="menu-link">
                                 <div data-i18n="{{ __('roles/index.main_titel') }}">{{ __('roles/index.main_titel') }}
                                 </div>
                             </a>
                         </li>
                         <li class="menu-item {{ route_is('roles.create', 'active') }}">
-                            <a href="{{ route('roles.create', ['locale' => app()->getLocale()]) }}" class="menu-link">
+                            <a href="{{ router('roles.create') }}" class="menu-link">
                                 <div data-i18n="{{ __('roles/create.title.sub') }}">{{ __('roles/create.title.sub') }}
                                 </div>
                             </a>
@@ -98,9 +96,32 @@
                 <!-- roles -->
 
 
+                <!-- admins -->
+                <li class="menu-item {{ route_is('admins.*', 'open') }}" id="admins">
+                    <a href="{{ router('admins.index') }}" class="menu-link menu-toggle">
+                        <i class="menu-icon tf-icons ti ti-id"></i>
+                        <div data-i18n="{{ __('admins/index.main_titel') }}">{{ __('admins/index.main_titel') }}</div>
+                        <div class="badge bg-primary rounded-pill ms-auto">0</div> <!-- Default to 0 -->
+                    </a>
+                    <ul class="menu-sub">
+                        <li class="menu-item {{ route_is('admins.index', 'active') }}">
+                            <a href="{{ router('admins.index') }}" class="menu-link">
+                                <div data-i18n="{{ __('admins/index.main_titel') }}">{{ __('admins/index.main_titel') }}
+                                </div>
+                            </a>
+                        </li>
+                        <li class="menu-item {{ route_is('admins.create', 'active') }}">
+                            <a href="{{ router('admins.create') }}" class="menu-link">
+                                <div data-i18n="{{ __('admins/create.sub_titel') }}">{{ __('admins/create.title.sub') }}
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- admins -->
+
+
 
             </ul>
         </aside>
         <!-- / Menu -->
-
-      

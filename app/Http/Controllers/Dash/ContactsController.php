@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dash;
+use App\Models\Contacts;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreContactsRequest;
+use App\Http\Requests\UpdateContactsRequest;
 
-use App\Models\SubServices;
-use App\Http\Requests\StoreSubServicesRequest;
-use App\Http\Requests\UpdateSubServicesRequest;
-
-class SubServicesController extends Controller
+class ContactsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class SubServicesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreSubServicesRequest $request)
+    public function store(StoreContactsRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class SubServicesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(SubServices $subServices)
+    public function show(Contacts $contacts)
     {
         //
     }
@@ -43,7 +43,7 @@ class SubServicesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(SubServices $subServices)
+    public function edit(Contacts $contacts)
     {
         //
     }
@@ -51,7 +51,7 @@ class SubServicesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateSubServicesRequest $request, SubServices $subServices)
+    public function update(UpdateContactsRequest $request, Contacts $contacts)
     {
         //
     }
@@ -59,7 +59,7 @@ class SubServicesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(SubServices $subServices)
+    public function destroy(Contacts $contacts)
     {
         //
     }

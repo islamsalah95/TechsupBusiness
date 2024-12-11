@@ -30,10 +30,9 @@ class CreateService extends Component
             'status' => 1, // Assuming status is always active
         ]);
 
-        session()->flash('message', 'service successfully created.');
+        session()->flash('message', __('share.message.create'));
 
-        // Redirect to services list
-        return redirect()->to('/' . app()->getLocale() . '/dash/services');
+        return redirectLive('services');
     }
 
     public function render()

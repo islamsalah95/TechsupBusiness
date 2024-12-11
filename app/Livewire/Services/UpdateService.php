@@ -34,10 +34,9 @@ class UpdateService extends Component
             'status' => $this->status, // Assuming status is always active
         ]);
 
-        session()->flash('message', 'Service successfully updated.');
+        session()->flash('message', __('share.message.update'));
 
-        // Redirect to services list
-        return redirect()->to('/' . app()->getLocale() . '/dash/services');
+        return redirectLive('services');
     }
 
     public function mount($services = null)

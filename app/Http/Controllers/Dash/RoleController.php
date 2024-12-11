@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
-
-
+namespace App\Http\Controllers\Dash;
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
